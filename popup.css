@@ -1,6 +1,7 @@
 body {
   padding: 0;
   margin: 0;
+  padding-bottom: 36px;
   background: #EEEEEE;
 }
 
@@ -25,7 +26,7 @@ ul.todolist { list-style: none; padding-left: 0; margin-left: 0;}
 ul.todolist li { }
 ul.todolist li { display:block; text-decoration:none; color:#000000; background-color:#FFFFFF; line-height:30px;
   border-bottom-style:solid; border-bottom-width:1px; border-bottom-color:#CCCCCC; padding-left:10px; cursor:pointer; }
-ul.todolist li:hover { background-color:#F08080; }
+ul.todolist li:hover { background-color:#9AFF9A; }
 ul.todolist li strong { margin-right:10px; }
 
 

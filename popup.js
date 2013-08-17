@@ -73,7 +73,15 @@ function init() {
 		// Register button
 		$addItemButton.addEventListener('click', function () {
 			todos.addItem($itemText.value);
+                        $itemText.value = "";
 		});
+                var $prompt = document.querySelector('.prompt');
+                $prompt.addEventListener("keypress", function (e) {
+                        if (e.keyCode == 13) {
+			        todos.addItem($itemText.value);
+                                $itemText.value = "";
+                        }
+                });
 
 		console.log('loaded!');
 	});
