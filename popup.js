@@ -23,6 +23,7 @@ var List = function (initialData) {
 	};
 
 	this.addItem = function (itemText) {
+                if (!itemText || !itemText.trim()) return;
 		var write = {};
 		write[guid()] = itemText;
 		chrome.storage.sync.set(write, function () {
