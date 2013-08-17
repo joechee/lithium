@@ -3,9 +3,19 @@ var List = function (initialData) {
 	var $todolist = document.querySelector('.todolist');
 	this.renderItem = function (itemText, itemId) {
 		// Renders into the DOM
-		var listItem = document.createElement('li');
+                var listItem = document.createElement('li');
+                listItem.className = "todo-item";
 		itemId = itemId || guid();
 		listItem.innerHTML = itemText;
+
+                var removeItem = function () {
+                    listItem.parentNode.removeChild(listItem);
+		    chrome.storage.sync.remove(itemId, function () {
+		        console.log(arguments);
+		    });
+                }; 
+
+                listItem.addEventListener('click', removeItem);
 
 		$todolist.appendChild(listItem);
 		internalList[itemId] = itemText;
@@ -35,7 +45,9 @@ var List = function (initialData) {
 
 chrome.storage.onChanged.addListener(function (changes, areaName) {
 	for (itemId in changes) {
-		todos.renderItem(changes[itemId], itemId);
+                if (changes[itemId]['newValue']) {
+		        todos.renderItem(changes[itemId]['newValue'], itemId);
+                }
 	}
 });
 

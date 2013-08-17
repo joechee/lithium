@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "To-do list",
-  "description": "This extenson demonstrates a browser action with kittens.",
+  "description": "This is a simple extension for a to-do list that syncs across Chromes.",
   "version": "1.0",
 
   "permissions": [
