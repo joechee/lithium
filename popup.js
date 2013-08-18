@@ -46,9 +46,9 @@ var List = function (initialData) {
 
 chrome.storage.onChanged.addListener(function (changes, areaName) {
 	for (itemId in changes) {
-                if (changes[itemId]['newValue']) {
-		        todos.renderItem(changes[itemId]['newValue'], itemId);
-                }
+        if (changes[itemId]['newValue']) {
+        	todos.renderItem(changes[itemId]['newValue'], itemId);
+        }
 	}
 });
 
@@ -68,21 +68,33 @@ function init() {
 	chrome.storage.sync.get(function (data) {
 		todos = new List(data);
 
-		var $addItemButton = document.querySelector('.add-item');
+		// var $addItemButton = document.querySelector('.add-item');
 		var $itemText = document.querySelector('.item-text');
 
 		// Register button
-		$addItemButton.addEventListener('click', function () {
-			todos.addItem($itemText.value);
-                        $itemText.value = "";
-		});
-                var $prompt = document.querySelector('.prompt');
-                $prompt.addEventListener("keypress", function (e) {
-                        if (e.keyCode == 13) {
-			        todos.addItem($itemText.value);
-                                $itemText.value = "";
-                        }
-                });
+		// $addItemButton.addEventListener('click', function () {
+		// 	todos.addItem($itemText.value);
+  //                       $itemText.value = "";
+		// });
+        var $prompt = document.querySelector('.prompt');
+        $prompt.addEventListener("keypress", function (e) {
+            if (e.keyCode == 13) {
+            	if ($itemText.value === '') {
+            		console.log('empty input');
+            		return;
+            	}
+            	if ($itemText.value.indexOf('<script>') !== -1) {
+            		console.log('unsafe input');
+            		$itemText.value = "";
+            		return;
+            	}
+       			todos.addItem($itemText.value);
+            	$itemText.value = "";
+            	var $list = document.querySelector('.list-container');
+				$list.scrollTop = $list.scrollHeight;
+				console.log($list.scrollHeight);
+            }
+        });
 
 		console.log('loaded!');
 	});
