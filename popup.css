@@ -77,13 +77,14 @@ ul.todolist li strong { margin-right:10px; }
   position: fixed;
   bottom: 0;
   border-top: 1px solid #dadada;
+  width: 100%;
 }
 
 .prompt input {
+  width: 100%;
   background-color: #fff;
   font-family: 'Fresca', Helvetica, Arial, sans-serif;
   font-size: 18px;
-  width: 320px;
   border: none;
   outline: none !important;
   padding: .5em;
