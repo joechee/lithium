@@ -1,42 +1,57 @@
 body {
   padding: 0;
   margin: 0;
-  padding-bottom: 36px;
-  background: #EEEEEE;
+  position: relative;
+  background-color: #f8f8f8;
+  width:320px; 
+  font-family: 'Fresca', Georgia, Times, serif; 
+  font-size:18px; 
 }
-
 
 h1 {
   width: 100%;
-  background: #B8C1C8;
-  border-bottom: 1px solid #989EA4;
-  border-top: 1px solid #717D85;
-  color: #FFF;
-  font: bold 24px/27px Helvetica, Arial, sans-serif;
+  background: #e70e28;
+  border-bottom: 3px solid #b3071b;
+  color: #fff;
+  font: bold 24px/27px 'Fresca', Helvetica, Arial, sans-serif;
   margin: 0;
-  padding: 2px 0 0 12px;
-  position: absolute;
-  text-shadow: 0 1px #646A6E;
+  padding: 5px 12px;
+  padding-top: 7px;
+  text-shadow: 0 2px 0 #b3071b;
+  position: fixed;
+}
+.list-container {
+  min-height: 200px;
+  max-height: 600px;
+  padding-top: 42px;
+  margin-bottom: 40px;
+  overflow-y: scroll;
 }
 
-/* List CSS modified from http://www.marcofolio.net/css/8_different_ways_to_beautifully_style_your_lists.html */
+ul.todolist { 
+  list-style: none; 
+  padding-left: 0; 
+  margin-left: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
 
-body{ width:320px; font-family:Georgia, Times, serif; font-size:15px; }
-ul.todolist { list-style: none; padding-left: 0; margin-left: 0;}
-ul.todolist li { }
-ul.todolist li { display:block; text-decoration:none; color:#000000; background-color:#FFFFFF; line-height:30px;
-  border-bottom-style:solid; border-bottom-width:1px; border-bottom-color:#CCCCCC; padding-left:10px; cursor:pointer; }
-ul.todolist li:hover { background-color:#9AFF9A; }
+ul.todolist li { 
+  display:block; 
+  text-decoration:none; 
+  color: #000000; 
+  line-height: 20px;
+  border-top: solid 1px #ccc; 
+  padding: 5px 10px; 
+  cursor:pointer; 
+}
+ul.todolist li:first-child { border-top: none; }
+ul.todolist li:hover { color: #ccc; text-decoration: line-through; }
 ul.todolist li strong { margin-right:10px; }
 
 
-button:hover {
-background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
-}
-
-
 /* Using pure CSS buttons from purecss.io/buttons/ */
-button {
+/*button {
   font-size: 100%;
   padding: .5em 1.5em;
   color: #444;
@@ -47,27 +62,35 @@ button {
   text-decoration: none;
   border-radius: 2px;
   -webkit-font-smoothing: antialiased;
-  -webkit-transition: .1s linear -webkit-box-shadow;
-  -moz-transition: .1s linear -moz-box-shadow;
-  -ms-transition: .1s linear box-shadow;
-  -o-transition: .1s linear box-shadow;
-  transition: .1s linear box-shadow;
-}
+  -webkit-transition: .3s linear -webkit-box-shadow;
+  -moz-transition: .3s linear -moz-box-shadow;
+  -ms-transition: .3s linear box-shadow;
+  -o-transition: .3s linear box-shadow;
+  transition: .3s linear box-shadow;
+}*/
+
+/*button:hover {
+  background-image: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1));
+}*/
 
 .prompt {
-  position:fixed;
+  position: fixed;
   bottom: 0;
+  border-top: 1px solid #dadada;
 }
 
 .prompt input {
-    border: 2px solid #dadada;
-    border-radius: 7px;
-    line-height: 25px;
-    width: 210px;
+  background-color: #fff;
+  font-family: 'Fresca', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  width: 320px;
+  border: none;
+  outline: none !important;
+  padding: .5em;
+  padding-left: 10px;
+  margin: 0;
 }
 
 .prompt input:focus { 
     outline: none;
-    border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
 }
