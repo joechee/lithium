@@ -1,8 +1,8 @@
-TODO List
-=========
+Lithium
+=======
 
 
-- Syncs between Chrome accounts
+- A to-do list that syncs between Chrome accounts
 
 
 TODOS (Meta):

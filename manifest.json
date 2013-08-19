@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "To-do list",
+  "name": "Lithium",
   "description": "This is a simple extension for a to-do list that syncs across Chromes.",
   "version": "1.0",
 
