@@ -3,7 +3,7 @@
 
   "name": "Lithium",
   "description": "This is a simple extension for a to-do list that syncs across Chromes.",
-  "version": "1.0",
+  "version": "1.0.1",
 
   "permissions": [
     "storage"
