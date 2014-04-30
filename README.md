@@ -7,8 +7,7 @@ Lithium
 Download
 ========
 
-Download at https://chrome.google.com/webstore/detail/lithium/kicicjbllaeofheiflnhalipknpnbcdk[https://chrome.google.com/webstore/detail/lithium/kicicjbllaeofheiflnhalipknpnbcdk]
-
+Download at https://chrome.google.com/webstore/detail/lithium/kicicjbllaeofheiflnhalipknpnbcdk
 
 TODOS (Meta):
 -------------
